@@ -30,6 +30,29 @@ Whether you're building your first MCP server or wiring up a complex multi-agent
 
 ---
 
+## 🧩 Examples
+
+### MCP.DotNetMethod — .NET Method as an AI Tool
+
+Demonstrates how to wrap a plain static .NET method as an AI tool using `AIFunctionFactory.Create` and invoke it through an Azure AI Foundry chat-completion model with `DefaultAzureCredential`.
+
+| Resource | Link |
+|----------|------|
+| Source code | [`src/ADMcpExamples/MCP.DotNetMethod/`](./src/ADMcpExamples/MCP.DotNetMethod/) |
+| Documentation | [`docs/dotnet-method.md`](./docs/dotnet-method.md) |
+| Tests | [`tests/MCP.DotNetMethod.Tests/`](./tests/MCP.DotNetMethod.Tests/) |
+
+**Required environment variables:**
+
+| Variable | Description |
+|----------|-------------|
+| `Endpoint` | Azure OpenAI resource URI (e.g. `https://my-resource.openai.azure.com/`) |
+| `DeploymentName` | Name of your chat-completion deployment (e.g. `gpt-4o`) |
+
+Authentication uses [`DefaultAzureCredential`](https://learn.microsoft.com/en-us/dotnet/api/azure.identity.defaultazurecredential) — run `az login` or sign into Visual Studio before running locally.
+
+---
+
 ## 🚀 Getting Started
 
 1. **Clone the repository**
@@ -85,6 +108,8 @@ Contributions are welcome! Please:
 | How we built the Microsoft Learn MCP Server | [devblogs.microsoft.com](https://devblogs.microsoft.com/engineering-at-microsoft/how-we-built-the-microsoft-learn-mcp-server/) |
 | Kickstart Your AI Development with MCP (Microsoft Tech Community) | [techcommunity.microsoft.com](https://techcommunity.microsoft.com/blog/educatordeveloperblog/kickstart-your-ai-development-with-the-model-context-protocol-mcp-course/4414963) |
 | Azure AI Foundry documentation | [learn.microsoft.com](https://learn.microsoft.com/en-us/azure/ai-foundry/) |
+| DefaultAzureCredential overview | [learn.microsoft.com](https://learn.microsoft.com/en-us/dotnet/api/azure.identity.defaultazurecredential) |
+| AIFunctionFactory in Microsoft.Extensions.AI | [learn.microsoft.com](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.ai.aifunctionfactory) |
 
 ---
 

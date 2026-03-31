@@ -6,8 +6,7 @@ This folder contains all automated tests for the MCP (Model Context Protocol) de
 
 | Subfolder | Description |
 |-----------|-------------|
-| `unit/` | Unit tests for individual MCP components |
-| `integration/` | Integration tests for end-to-end MCP flows |
+| `MCP.DotNetMethod.Tests/` | Unit and configuration tests for the [MCP.DotNetMethod](../src/ADMcpExamples/MCP.DotNetMethod/) example |
 
 ## Running Tests
 
@@ -23,10 +22,11 @@ pytest
 
 ## Test Strategy
 
-- **Unit tests** validate individual MCP server/client logic in isolation.
-- **Integration tests** exercise complete request/response flows between an MCP host, client, and server.
+- **Unit tests** validate individual MCP server/client logic in isolation (e.g. `DotnetMethodHelperTests` — tax calculation logic).
+- **Configuration tests** verify that `AIFunctionFactory.Create` registers tools with the correct name, description, and invocation behaviour (`ChatConfigurationTests`).
+- **Environment tests** confirm that missing or empty environment variables surface as `ArgumentException`/`ArgumentNullException` at startup (`EnvironmentConfigurationTests`).
 
-> **Note:** Integration tests may require Azure credentials or local service emulators. See [docs/getting-started.md](../docs/getting-started.md) for environment setup.
+> **Note:** Integration tests that call Azure OpenAI require a valid `Endpoint` and `DeploymentName` environment variable plus an authenticated `DefaultAzureCredential`. See [docs/dotnet-method.md](../docs/dotnet-method.md) for setup instructions.
 
 ## Contributing
 

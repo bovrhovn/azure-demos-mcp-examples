@@ -9,6 +9,7 @@ This folder contains all documentation for the MCP (Model Context Protocol) demo
 | `architecture.md` | High-level architecture of MCP in agentic AI systems |
 | `getting-started.md` | Step-by-step guide to running the demos locally |
 | `mcp-concepts.md` | Core MCP concepts: hosts, clients, servers, and transports |
+| [`dotnet-method.md`](./dotnet-method.md) | MCP.DotNetMethod — exposing a .NET method as an AI tool with Azure AI Foundry |
 
 ## What is MCP?
 
