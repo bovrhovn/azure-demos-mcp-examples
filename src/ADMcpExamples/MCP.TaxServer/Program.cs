@@ -1,4 +1,5 @@
 var builder = WebApplication.CreateBuilder(args);
+builder.WebHost.ConfigureKestrel(settings => settings.AddServerHeader = false);
 builder.Logging.AddConsole(consoleLogOptions => 
     consoleLogOptions.LogToStandardErrorThreshold = LogLevel.Trace);
 builder.Services.AddHealthChecks();
