@@ -53,6 +53,42 @@ Authentication uses [`DefaultAzureCredential`](https://learn.microsoft.com/en-us
 
 ---
 
+### MCP.TaxServer — MCP Server with HTTP Transport
+
+An ASP.NET Core MCP server that exposes a tax calculation tool (`get_tax_for_customer`) over a stateless HTTP transport. Clients connect to `/mcp` to list and invoke tools.
+
+| Resource | Link |
+|----------|------|
+| Source code | [`src/ADMcpExamples/MCP.TaxServer/`](./src/ADMcpExamples/MCP.TaxServer/) |
+| Documentation | [`docs/tax-server.md`](./docs/tax-server.md) |
+| Tests | [`tests/MCP.TaxServer.Tests/`](./tests/MCP.TaxServer.Tests/) |
+
+No Azure credentials are required to run the server. No environment variables needed.
+
+---
+
+### MCP.TaxClient — MCP Client with Azure AI Foundry
+
+A console application that connects to a running MCP server, retrieves its tools, and passes them to an Azure AI Foundry chat-completion model. The model invokes the tax tool automatically based on the user's question.
+
+| Resource | Link |
+|----------|------|
+| Source code | [`src/ADMcpExamples/MCP.TaxClient/`](./src/ADMcpExamples/MCP.TaxClient/) |
+| Documentation | [`docs/tax-client.md`](./docs/tax-client.md) |
+| Tests | [`tests/MCP.TaxClient.Tests/`](./tests/MCP.TaxClient.Tests/) |
+
+**Required environment variables:**
+
+| Variable | Description |
+|----------|-------------|
+| `Endpoint` | Azure OpenAI resource URI (e.g. `https://my-resource.openai.azure.com/`) |
+| `McpEndpoint` | URL of a running MCP server `/mcp` endpoint (e.g. `http://localhost:5000/mcp`) |
+| `DeploymentName` | Name of your chat-completion deployment (e.g. `gpt-4o`) |
+
+Authentication uses [`DefaultAzureCredential`](https://learn.microsoft.com/en-us/dotnet/api/azure.identity.defaultazurecredential) — run `az login` or sign into Visual Studio before running locally.
+
+---
+
 ## 🚀 Getting Started
 
 1. **Clone the repository**

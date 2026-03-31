@@ -10,6 +10,8 @@ This folder contains all documentation for the MCP (Model Context Protocol) demo
 | `getting-started.md` | Step-by-step guide to running the demos locally |
 | `mcp-concepts.md` | Core MCP concepts: hosts, clients, servers, and transports |
 | [`dotnet-method.md`](./dotnet-method.md) | MCP.DotNetMethod — exposing a .NET method as an AI tool with Azure AI Foundry |
+| [`tax-server.md`](./tax-server.md) | MCP.TaxServer — MCP server with stateless HTTP transport |
+| [`tax-client.md`](./tax-client.md) | MCP.TaxClient — MCP client connecting to a server with Azure AI Foundry |
 
 ## What is MCP?
 
