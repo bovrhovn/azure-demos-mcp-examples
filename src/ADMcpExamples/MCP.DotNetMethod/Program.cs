@@ -30,7 +30,7 @@ var chatOptions = new ChatOptions
     [
         AIFunctionFactory.Create(DotnetMethodHelper.CalculateTax,
             "get_tax_for_customer",
-            "Gets tax for customer for specific period of month")
+            "Gets tax for customer for specific period of months")
     ]
 };
 
